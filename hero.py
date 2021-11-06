@@ -1,4 +1,4 @@
-import random
+from random import choice
 
 class Hero:
   def __init__(self, name, starting_health=100):
@@ -7,9 +7,13 @@ class Hero:
     self.current_health = starting_health
 
   def fight(self, opponent):
-    heroes = ["Wonder Woman", "Dumbledore"]
+    # heroes = [self, opponent]
+    total = self.current_health + opponent.current_health
 
-    print (f"{random.choice(heroes)} wins!")
+    if self.current_health/total > opponent.current_health/total:
+      print(f"{self.name} defeats {opponent.name}!")
+    else:
+      print(f"{opponent.name} defeats {self.name}!")  
 
 
 if __name__ == "__main__":
