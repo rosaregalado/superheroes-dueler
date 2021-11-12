@@ -57,10 +57,18 @@ class Hero:
   def add_weapon(self, weapon):
     self.abilities.append(weapon)
 
+  # kill method
+  def add_kill(self, num_kills):
+    self.kills += num_kills
+
+  # deaths method
+  def add_death(self, num_deaths):
+    self.deaths += num_deaths
+
   # attack method
   def attack(self):
-    '''Calculate the total damage from all ability attacks.
-      return: total_damage:Int'''
+    # Calculate the total damage from all ability attacks.
+    # return: total_damage:Int
     # start total at 0
     total_damage = 0
     for ability in self.abilities:
@@ -70,8 +78,8 @@ class Hero:
 
   # defend method
   def defend(self):
-    '''Calculate the total block amount from all armor blocks.
-    return: total_block:Int'''
+    # Calculate the total block amount from all armor blocks.
+    # return: total_block:Int
     total_block = 0
     # check if not dead
     if self.current_health == 0:
@@ -83,7 +91,7 @@ class Hero:
 
   # damage method
   def take_damage(self, damage):
-    '''Updates self.current_health to reflect the damage minus the defense.'''
+    # Updates self.current_health to reflect the damage minus the defense.
     defense = self.defend()
     new_damage = damage - defense
     if new_damage > 0:
@@ -94,7 +102,7 @@ class Hero:
 
   # check if hero still alive
   def is_alive(self):
-    '''Return True of False depending on whether the hero is alive or not.'''
+    # Return True of False depending on whether the hero is alive or not.
     if self.current_health <= 0:
       # dead
       return False
