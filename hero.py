@@ -109,8 +109,7 @@ class Hero:
     else:
       # alive
       return True
-
-
+      
 
 if __name__ == "__main__":
   # hero1 = Hero("Wonder Woman")
